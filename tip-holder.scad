@@ -10,10 +10,10 @@ x_spacing = 10;
 y_spacing = 10;
 rim_spacing = 5;
 
-plate_thickness = 1;
+plate_thickness = 2;
 plate_corner_radius = 1;
 plate_bottom_radius = 0;
-plate_top_radius = 0;
+plate_top_radius = 1;
 
 $fn = $preview ? 10 : 100;
 
