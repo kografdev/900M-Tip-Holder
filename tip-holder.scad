@@ -1,22 +1,27 @@
 include <Round-Anything/polyround.scad>
 
-rows = 2;
-columns = 5;
+rows = 2; //[1:40]
+columns = 5; //[1:40]
+
+x_spacing = 10; //[1:0.1:40]
+y_spacing = 10; //[1:0.1:40]
+rim_spacing = 5; //[1:0.1:40]
+
+plate_thickness = 2; //[0.5:0.1:20]
+plate_corner_radius = 1; //[0:0.1:5]
+plate_bottom_radius = 0; //[0:0.1:5]
+plate_top_radius = 1; //[0:0.1:5]
+
+centred = true;
+
+module __Customizer_Limit__ () {}
 
 holder_diameter = 3.5;
 holder_height = 20;
 
-x_spacing = 10;
-y_spacing = 10;
-rim_spacing = 5;
-
-plate_thickness = 2;
-plate_corner_radius = 1;
-plate_bottom_radius = 0;
-plate_top_radius = 1;
-
 $fn = $preview ? 10 : 100;
 
+translate([-(columns-1)/2*(x_spacing+holder_diameter), -(rows-1)/2*(x_spacing+holder_diameter), 0])
 union(){
     for(i = [0: columns-1]){
         for (j = [0: rows-1]){
